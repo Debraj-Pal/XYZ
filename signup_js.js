@@ -14,9 +14,7 @@
  // Initialize Firebase
  const app = initializeApp(firebaseConfig);
  const auth = getAuth(app);
-
  
-
  const submit=document.getElementById('submit');
  submit.addEventListener("click",function(event){
   event.preventDefault()
@@ -34,11 +32,10 @@
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
-    alert(errorMessage)
   });
  })
 
-(() => {
+ (() => {
   'use strict'
 
   // Fetch all the forms we want to apply custom Bootstrap validation styles to
@@ -53,18 +50,9 @@
       }
 
       form.classList.add('was-validated')
-      const password = form.querySelector('#password').value;
-const confirmPassword = form.querySelector('#confirmPassword').value;
-
-if (password !== confirmPassword) {
-  event.preventDefault();
-  event.stopPropagation();
-  form.querySelector('#confirmPassword').setCustomValidity("Passwords do not match");
-} else {
-  form.querySelector('#confirmPassword').setCustomValidity("");
-}
-
+      
     }, false)
   })
 })()
+
 
